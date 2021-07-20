@@ -3,11 +3,10 @@ import fs from 'fs';
 
 export default function generatePlaygroundJson(name) {
   const playgroundPath = path.resolve(
-    'playground',
-    '../examples',
+    'examples',
     name
   );
-  const files = fs.readdirSync(playgroundPath);
+  const files = fs.readdirSync(playgroundPath) || [];
   const jsonFiles = {}
 
   files.forEach((file) => {

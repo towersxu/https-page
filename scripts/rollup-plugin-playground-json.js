@@ -8,7 +8,8 @@ function copyPlaygroundJson() {
     const targetDir = path.resolve('examples');
     let configJson = fs.readFileSync(configPath, 'utf8');
     if (configJson) {
-      const examples = configJson.examples;
+      const examples = configJson.examples || [];
+      console.log(configJson)
       examples.forEach((example) => {
         console.log(example);
         const exampleJsonPath = path.resolve(targetDir, `${example.key}.playground.json`)
