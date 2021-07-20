@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogicFlow Playground</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="playground">
+  <header class="navbar">
+    <a href="/" class="home-link router-link-active">
+      <img src="//logic-flow.org/horizontal-logo.png" alt="LogicFlow" class="logo">
+      <span class="site-name can-hide">LogicFlow</span>
+    </a>
+  </header>
+  <div class="lf-playground">
+    <div id="js-playground-list" class="sidebar"></div>
+    <playground-ide id="js-ide" class="lf-playground-ide" resizable="true" editable-file-system="true">
+    </playground-ide>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>
