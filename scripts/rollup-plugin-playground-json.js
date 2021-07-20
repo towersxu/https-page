@@ -4,14 +4,15 @@ import generatePlaygroundJson from './generate-playground-json.mjs'
 
 function copyPlaygroundJson() {
   return new Promise((resolve) => {
-    const configPath = path.resolve('examples/config.json');
-    const targetDir = path.resolve('examples');
+    const configPath = path.resolve(__dirname, './examples/config.json');
+    const targetDir = path.resolve(__dirname, './examples');
     let configJson = fs.readFileSync(configPath, 'utf8');
+    console.log(configJson, configPath);
     if (configJson) {
-      const examples = configJson.examples || [];
-      console.log(configJson)
+      // fs.writeFileSync('config.json')
+      configJson = JSON.parse(configJson);
+      const examples = configJson.examples;
       examples.forEach((example) => {
-        console.log(example);
         const exampleJsonPath = path.resolve(targetDir, `${example.key}.playground.json`)
         const jsonObjct = generatePlaygroundJson(example.key)
         fs.writeFileSync(exampleJsonPath, JSON.stringify(jsonObjct));
