@@ -1,14 +1,18 @@
-import path from 'path';
+import path, { dirname }  from 'path';
+import { fileURLToPath } from 'url';
 import fs from 'fs';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default function generatePlaygroundJson(name) {
   const playgroundPath = path.resolve(
     __dirname,
-    './examples',
+    '../examples',
     name
   );
+
   const files = fs.readdirSync(playgroundPath);
-  console.log(files, playgroundPath);
+
   const jsonFiles = {}
 
   files.forEach((file) => {

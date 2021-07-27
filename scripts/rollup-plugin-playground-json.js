@@ -1,11 +1,14 @@
 import fs from 'fs';
-import path from 'path';
+import path, { dirname }  from 'path';
+import { fileURLToPath } from 'url';
 import generatePlaygroundJson from './generate-playground-json.mjs'
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 function copyPlaygroundJson() {
   return new Promise((resolve) => {
-    const configPath = path.resolve(__dirname, './examples/config.json');
-    const targetDir = path.resolve(__dirname, './examples');
+    const configPath = path.resolve(__dirname, '../examples/config.json');
+    const targetDir = path.resolve(__dirname, '../examples');
     let configJson = fs.readFileSync(configPath, 'utf8');
     console.log(configJson, configPath);
     if (configJson) {
