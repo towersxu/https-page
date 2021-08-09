@@ -11,6 +11,10 @@
     {
       "name": "html卡片",
       "key": "html-card"
+    },
+    {
+      "name": "自定义连线文本位置",
+      "key": "edge-text-position"
     }
   ]
 }
