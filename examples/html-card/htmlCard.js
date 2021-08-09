@@ -58,9 +58,9 @@ class HtmlCardModel extends HtmlNodeModel {
         const text = answer.text;
         const x = -120 + preOffset + (12 * text.length / 2) + 2;
         preOffset += 12 * text.length + 10 + 4; 
-        return [ x, 45]
+        return { x: x, y: 45, id: answer.id };
       });
-      this.anchorsOffset = [[0, -50]].concat(sourceAnchor);
+      this.anchorsOffset = [{ x: 0, y: -50}].concat(sourceAnchor);
     }
   }
 }
