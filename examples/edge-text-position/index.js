@@ -4,6 +4,7 @@ const lf = new LogicFlow({
   grid: true,
 });
 lf.register(customEdge);
+lf.setDefaultEdgeType('custom-edge'); // 设置默认新增的连线为自定义连线
 lf.render({
   nodes: [
     {
